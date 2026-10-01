@@ -6,261 +6,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    :root {
-      --bg: #0f172a;
-      --card-bg: #020617;
-      --accent: #38bdf8;
-      --accent-soft: #0ea5e9;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-subtle: #1f2937;
-      --danger: #f97373;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
+      margin: 0;
+      padding: 20px;
+      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      color: #111;
     }
 
-    .widget-shell {
-      width: 100%;
-      max-width: 420px;
-      background: linear-gradient(145deg, #020617 0, #020617 40%, #0b1120 100%);
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
-      overflow: hidden;
-    }
-
-    .widget-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-      background: radial-gradient(circle at top left, #0ea5e9 0, #020617 55%);
-    }
-
-    .logo-wrap {
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid rgba(15, 23, 42, 0.7);
-      background: #020617;
-      flex-shrink: 0;
-    }
-
-    .logo-wrap img {
-      width: 100%;
-      height: 100%;
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
       object-fit: cover;
-      display: block;
+      margin-bottom: 16px;
     }
 
-    .title-block {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .title-main {
-      font-size: 14px;
+    .title {
+      font-size: 22px;
       font-weight: 600;
-      letter-spacing: 0.02em;
+      margin-bottom: 4px;
     }
 
-    .title-sub {
-      font-size: 11px;
-      color: var(--text-muted);
+    .subtitle {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 20px;
     }
 
-    .badge {
-      margin-left: auto;
-      font-size: 10px;
-      padding: 3px 7px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: var(--accent);
-      background: rgba(15, 23, 42, 0.85);
+    .price-list {
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    .widget-body {
-      padding: 12px 14px 14px;
+    .item {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .hint {
-      font-size: 11px;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
-
-    .price-card {
-      border-radius: 14px;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 60%);
-      border: 1px solid rgba(31, 41, 55, 0.9);
-      padding: 10px 10px 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: baseline;
       justify-content: space-between;
-      gap: 8px;
-      padding: 4px 0;
-      border-bottom: 1px dashed rgba(31, 41, 55, 0.8);
+      max-width: 300px;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
     }
 
-    .price-row:last-child {
-      border-bottom: none;
-    }
-
-    .item-name {
-      font-size: 12px;
+    .name {
       font-weight: 500;
     }
 
-    .item-note {
-      font-size: 10px;
-      color: var(--text-muted);
-    }
-
-    .item-price {
-      font-size: 13px;
+    .price {
       font-weight: 600;
-      color: var(--accent-soft);
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 4px;
-      font-size: 10px;
-      color: var(--text-muted);
-    }
-
-    .total-label {
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 9px;
-    }
-
-    .total-value {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .mf-tag {
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .mf-tag span {
-      color: var(--accent-soft);
-    }
-
-    @media (max-width: 360px) {
-      .widget-shell {
-        border-radius: 16px;
-      }
-      .title-main {
-        font-size: 13px;
-      }
-      .item-price {
-        font-size: 12px;
-      }
+      color: #007aff;
     }
   </style>
 </head>
+
 <body>
-  <div class="widget-shell">
-    <header class="widget-header">
-      <div class="logo-wrap">
-        <!-- MicroFoundary logo -->
-        <img src="IMG_1741.jpg" alt="MicroFoundary logo" />
-      </div>
-      <div class="title-block">
-        <div class="title-main">MicroFoundary • Prices</div>
-        <div class="title-sub">Quick glance pricing widget</div>
-      </div>
-      <div class="badge">MF-PRC</div>
-    </header>
 
-    <main class="widget-body">
-      <p class="hint">
-        Current reference prices for core MicroFoundary microwidgets. Values are illustrative and can be updated anytime.
-      </p>
+  <!-- Logo top-left -->
+  <img src="IMG_1741.jpg" alt="MicroFoundary Logo" class="logo" />
 
-      <section class="price-card" aria-label="MicroFoundary price list">
-        <div class="price-row">
-          <div>
-            <div class="item-name">Single microwidget</div>
-            <div class="item-note">Standalone, no custom integration</div>
-          </div>
-          <div class="item-price">$9</div>
-        </div>
+  <!-- Page title -->
+  <div class="title">MicroFoundary • Prices</div>
+  <div class="subtitle">Current pricing for all microwidgets</div>
 
-        <div class="price-row">
-          <div>
-            <div class="item-name">Bundle of 3 widgets</div>
-            <div class="item-note">Same site, shared branding</div>
-          </div>
-          <div class="item-price">$24</div>
-        </div>
+  <!-- Left-aligned price list -->
+  <div class="price-list">
 
-        <div class="price-row">
-          <div>
-            <div class="item-name">Custom-tuned widget</div>
-            <div class="item-note">Tailored copy, colors, and layout</div>
-          </div>
-          <div class="item-price">$19</div>
-        </div>
+    <div class="item">
+      <div class="name">Clarifier</div>
+      <div class="price">$3</div>
+    </div>
 
-        <div class="price-row">
-          <div>
-            <div class="item-name">Support & updates</div>
-            <div class="item-note">Per month, per site</div>
-          </div>
-          <div class="item-price">$7</div>
-        </div>
+    <div class="item">
+      <div class="name">StarterWidget</div>
+      <div class="price">$3</div>
+    </div>
 
-        <div class="footer-row">
-          <div>
-            <div class="total-label">Example starter package</div>
-            <div class="total-value">$39</div>
-          </div>
-          <div class="mf-tag">
-            MicroFoundary <span>microwidgets</span>
-          </div>
-        </div>
-      </section>
-    </main>
+    <div class="item">
+      <div class="name">QuickCounter</div>
+      <div class="price">$5</div>
+    </div>
+
+    <div class="item">
+      <div class="name">PulseCounter</div>
+      <div class="price">$7</div>
+    </div>
+
+    <div class="item">
+      <div class="name">AutoFormatter</div>
+      <div class="price">$6</div>
+    </div>
+
+    <div class="item">
+      <div class="name">AutoWriter</div>
+      <div class="price">$5</div>
+    </div>
+
+    <div class="item">
+      <div class="name">MicroNote</div>
+      <div class="price">$6</div>
+    </div>
+
+    <div class="item">
+      <div class="name">TimeStampTool</div>
+      <div class="price">$6</div>
+    </div>
+
+    <div class="item">
+      <div class="name">MicroTimer</div>
+      <div class="price">$7</div>
+    </div>
+
+    <div class="item">
+      <div class="name">MicroCopy</div>
+      <div class="price">$7</div>
+    </div>
+
   </div>
+
 </body>
 </html>
+
