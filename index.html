@@ -1,63 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MicroFoundary Prices</title>
-<style>
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        background: #ffffff;
-        margin: 0;
-        padding: 20px;
-        text-align: center;
-    }
-    h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-    p {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 25px;
-    }
-    table {
-        margin: 0 auto;
-        border-collapse: collapse;
-        width: 90%;
-        max-width: 420px;
-    }
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 12px;
-        font-size: 16px;
-    }
-    th {
-        background: #f5f5f5;
-        font-weight: 600;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroFoundary Prices</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>MicroFoundary Price List</h1>
-<p>All tools are whole-dollar, single-digit prices.</p>
+    <!-- MicroFoundary Standard Header -->
+    <div class="mf-header">
+        <img src="IMG_1741.jpg" alt="MicroFoundary Logo" class="mf-logo">
+        <h1 class="mf-title">Prices</h1>
+        <p class="mf-detail">Quick reference price list</p>
+    </div>
 
-<table>
-    <tr><th>Tool</th><th>Price</th></tr>
-    <tr><td>Clarifier</td><td>$3</td></tr>
-    <tr><td>StarterWidget</td><td>$3</td></tr>
-    <tr><td>QuickCounter</td><td>$5</td></tr>
-    <tr><td>PulseCounter</td><td>$7</td></tr>
-    <tr><td>AutoFormatter</td><td>$6</td></tr>
-    <tr><td>AutoWriter</td><td>$5</td></tr>
-    <tr><td>MicroNote</td><td>$6</td></tr>
-    <tr><td>TimeStampTool</td><td>$6</td></tr>
-    <tr><td>MicroTimer</td><td>$7</td></tr>
-    <tr><td>MicroCopy</td><td>$7</td></tr>
-</table>
+    <!-- Prices Widget Content -->
+    <div class="mf-content">
+        <p>Enter an item and its price below. This widget keeps your list simple and readable.</p>
+
+        <div class="price-input-block">
+            <input type="text" id="itemName" placeholder="Item name">
+            <input type="number" id="itemPrice" placeholder="Price">
+            <button onclick="addPrice()">Add</button>
+        </div>
+
+        <ul id="priceList"></ul>
+    </div>
+
+    <!-- Script -->
+    <script>
+        function addPrice() {
+            const name = document.getElementById('itemName').value.trim();
+            const price = document.getElementById('itemPrice').value.trim();
+
+            if (!name || !price) return;
+
+            const list = document.getElementById('priceList');
+            const li = document.createElement('li');
+            li.textContent = name + ": $" + price;
+            list.appendChild(li);
+
+            document.getElementById('itemName').value = "";
+            document.getElementById('itemPrice').value = "";
+        }
+    </script>
 
 </body>
 </html>
-
