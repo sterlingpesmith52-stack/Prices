@@ -14,15 +14,19 @@
       color: #111;
     }
 
-    /* Correct left-aligned, properly cropped logo */
+    /* Corrected logo footprint:
+       - Still left aligned
+       - Cropped square
+       - Shows more of the right side (center crop)
+    */
     .logo {
       width: 60px;
       height: 60px;
-      object-fit: cover;          /* crops into a perfect square */
-      object-position: left center; /* ensures left-aligned crop */
+      object-fit: cover;
+      object-position: center center; /* spreads the visible area to the right */
       border-radius: 12px;
       display: block;
-      margin: 0 0 16px 0;         /* removes any accidental left padding */
+      margin: 0 0 16px 0;
     }
 
     .title {
@@ -127,4 +131,3 @@
 
 </body>
 </html>
-
