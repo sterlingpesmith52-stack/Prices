@@ -14,12 +14,15 @@
       color: #111;
     }
 
+    /* Correct left-aligned, properly cropped logo */
     .logo {
       width: 60px;
       height: 60px;
+      object-fit: cover;          /* crops into a perfect square */
+      object-position: left center; /* ensures left-aligned crop */
       border-radius: 12px;
-      object-fit: cover;
-      margin-bottom: 16px;
+      display: block;
+      margin: 0 0 16px 0;         /* removes any accidental left padding */
     }
 
     .title {
@@ -45,10 +48,6 @@
       max-width: 300px;
       padding: 6px 0;
       border-bottom: 1px solid #eee;
-    }
-
-    .row:last-child {
-      border-bottom: none;
     }
 
     .name {
