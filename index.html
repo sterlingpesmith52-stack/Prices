@@ -16,12 +16,12 @@
         padding-left: 12px;
     }
 
-    /* Correct logo spacing + correct filename extension */
+    /* Full-size logo + tight spacing */
     #mf-logo {
         display: block;
-        width: 64px;
+        width: 128px;          /* full MicroFoundary standard size */
         margin: 0;
-        margin-bottom: 2px; /* tight gap above title */
+        margin-bottom: 2px;    /* tight gap above title */
     }
 
     h1 {
@@ -36,13 +36,25 @@
         color: #555;
     }
 
+    /* Pricing list layout */
     .price-item {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         padding: 12px 0;
         border-bottom: 1px solid #eee;
         font-size: 18px;
+        padding-left: 12px;
+    }
+
+    .item-name {
+        width: 160px;   /* fixed column width for perfect alignment */
+        text-align: left;
+    }
+
+    .item-price {
+        width: 60px;    /* fixed price column */
+        text-align: left;
     }
 
     .buy-btn {
@@ -52,6 +64,7 @@
         padding: 6px 14px;
         border-radius: 6px;
         font-size: 16px;
+        margin-left: 12px;
     }
 </style>
 
@@ -65,47 +78,46 @@
 </div>
 
 <div class="price-item">
-    <span>Clarifier</span>
-    <span>$3</span>
+    <span class="item-name">Clarifier</span>
+    <span class="item-price">$3</span>
     <button class="buy-btn">Buy</button>
 </div>
 
 <div class="price-item">
-    <span>StarterWidget</span>
-    <span>$3</span>
+    <span class="item-name">StarterWidget</span>
+    <span class="item-price">$3</span>
     <button class="buy-btn">Buy</button>
 </div>
 
 <div class="price-item">
-    <span>QuickCounter</span>
-    <span>$5</span>
+    <span class="item-name">QuickCounter</span>
+    <span class="item-price">$5</span>
     <button class="buy-btn">Buy</button>
 </div>
 
 <div class="price-item">
-    <span>PulseCounter</span>
-    <span>$7</span>
+    <span class="item-name">PulseCounter</span>
+    <span class="item-price">$7</span>
     <button class="buy-btn">Buy</button>
 </div>
 
 <div class="price-item">
-    <span>AutoFormatter</span>
-    <span>$6</span>
+    <span class="item-name">AutoFormatter</span>
+    <span class="item-price">$6</span>
     <button class="buy-btn">Buy</button>
 </div>
 
 <div class="price-item">
-    <span>AutoWriter</span>
-    <span>$5</span>
+    <span class="item-name">AutoWriter</span>
+    <span class="item-price">$5</span>
     <button class="buy-btn">Buy</button>
 </div>
 
 <div class="price-item">
-    <span>MicroNote</span>
-    <span>$6</span>
+    <span class="item-name">MicroNote</span>
+    <span class="item-price">$6</span>
     <button class="buy-btn">Buy</button>
 </div>
 
 </body>
 </html>
-
