@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,18 +15,17 @@
       color: #111111;
     }
 
-    /* Logo: left-aligned, not over-cropped, slightly larger */
+    /* Correct MicroFoundary logo proportions */
     .logo {
-      width: 72px;
-      height: 72px;
-      object-fit: contain;      /* show full logo without tight crop */
-      border-radius: 12px;
+      width: 128px;          /* wider footprint */
+      height: 52px;          /* shorter vertical footprint */
+      object-fit: contain;
       display: block;
-      margin: 0 0 16px 0;
+      margin: 0 0 12px 0;    /* minimal vertical space */
     }
 
     .title {
-      font-size: 26px;          /* larger title */
+      font-size: 26px;
       font-weight: 600;
       margin-bottom: 4px;
     }
@@ -39,13 +39,14 @@
     .price-list {
       font-size: 16px;
       line-height: 1.6;
+      max-width: 360px;
     }
 
     .item {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      max-width: 320px;
-      padding: 6px 0;
+      padding: 10px 0;
       border-bottom: 1px solid #eeeeee;
     }
 
@@ -56,74 +57,120 @@
 
     .price {
       font-weight: 600;
-      color: #111111;           /* no blue; neutral text */
+      color: #111111;
+      margin-right: 12px; /* spacing before Buy button */
+    }
+
+    .buy-btn {
+      background: #007aff;
+      color: #ffffff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 12px; /* right padding (your request) */
+    }
+
+    .buy-btn:active {
+      opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Logo top-left -->
+  <!-- Correct logo footprint -->
   <img src="IMG_1741.jpeg" alt="MicroFoundary Logo" class="logo" />
 
-  <!-- Title without dot -->
   <div class="title">MicroFoundary Prices</div>
   <div class="subtitle">Current pricing for all microwidgets</div>
 
-  <!-- Left-aligned price list -->
   <div class="price-list">
 
     <div class="item">
       <div class="name">Clarifier</div>
-      <div class="price">$3</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$3</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=Clarifier'">Buy</button>
+      </div>
     </div>
 
     <div class="item">
       <div class="name">StarterWidget</div>
-      <div class="price">$3</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$3</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=StarterWidget'">Buy</button>
+      </div>
     </div>
 
     <div class="item">
       <div class="name">QuickCounter</div>
-      <div class="price">$5</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$5</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=QuickCounter'">Buy</button>
+      </div>
     </div>
 
     <div class="item">
       <div class="name">PulseCounter</div>
-      <div class="price">$7</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$7</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=PulseCounter'">Buy</button>
+      </div>
     </div>
 
     <div class="item">
       <div class="name">AutoFormatter</div>
-      <div class="price">$6</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$6</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=AutoFormatter'">Buy</button>
+      </div>
     </div>
 
     <div class="item">
       <div class="name">AutoWriter</div>
-      <div class="price">$5</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$5</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=AutoWriter'">Buy</button>
+      </div>
     </div>
 
     <div class="item">
       <div class="name">MicroNote</div>
-      <div class="price">$6</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$6</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=MicroNote'">Buy</button>
+      </div>
     </div>
 
     <div class="item">
       <div class="name">TimeStampTool</div>
-      <div class="price">$6</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$6</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=TimeStampTool'">Buy</button>
+      </div>
     </div>
 
     <div class="item">
       <div class="name">MicroTimer</div>
-      <div class="price">$7</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$7</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=MicroTimer'">Buy</button>
+      </div>
     </div>
 
     <div class="item">
       <div class="name">MicroCopy</div>
-      <div class="price">$7</div>
+      <div style="display:flex;align-items:center;">
+        <div class="price">$7</div>
+        <button class="buy-btn" onclick="location.href='payment.html?tool=MicroCopy'">Buy</button>
+      </div>
     </div>
 
   </div>
 
 </body>
 </html>
+
