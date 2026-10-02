@@ -1,176 +1,109 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MicroFoundary Prices</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MicroFoundary Prices</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      background: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-      color: #111111;
+<link rel="stylesheet" href="universal.css">
+
+<style>
+    /* Tighten logo spacing */
+    #mf-header {
+        text-align: center;
+        padding-top: 4px;
     }
 
-    /* Correct MicroFoundary logo proportions */
-    .logo {
-      width: 128px;          /* wider footprint */
-      height: 52px;          /* shorter vertical footprint */
-      object-fit: contain;
-      display: block;
-      margin: 0 0 12px 0;    /* minimal vertical space */
+    #mf-logo {
+        display: block;
+        width: 64px;
+        margin: 0 auto;
+        margin-bottom: 2px; /* critical spacing fix */
     }
 
-    .title {
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 4px;
+    h1 {
+        font-size: 28px;
+        margin: 0;
+        padding: 0;
     }
 
-    .subtitle {
-      font-size: 14px;
-      color: #555555;
-      margin-bottom: 20px;
+    h2 {
+        font-size: 16px;
+        margin-top: 4px;
+        color: #555;
     }
 
-    .price-list {
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 360px;
-    }
-
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #eeeeee;
-    }
-
-    .name {
-      font-weight: 500;
-      color: #111111;
-    }
-
-    .price {
-      font-weight: 600;
-      color: #111111;
-      margin-right: 12px; /* spacing before Buy button */
+    .price-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 18px;
     }
 
     .buy-btn {
-      background: #007aff;
-      color: #ffffff;
-      border: none;
-      padding: 6px 14px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      margin-right: 12px; /* right padding (your request) */
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 16px;
     }
+</style>
 
-    .buy-btn:active {
-      opacity: 0.7;
-    }
-  </style>
 </head>
-
 <body>
 
-  <!-- Correct logo footprint -->
-  <img src="IMG_1741.jpeg" alt="MicroFoundary Logo" class="logo" />
+<div id="mf-header">
+    <img id="mf-logo" src="IMG_1741.jpg" alt="MicroFoundary Logo">
+    <h1>MicroFoundary Prices</h1>
+    <h2>Current pricing for all microwidgets</h2>
+</div>
 
-  <div class="title">MicroFoundary Prices</div>
-  <div class="subtitle">Current pricing for all microwidgets</div>
+<div class="price-item">
+    <span>Clarifier</span>
+    <span>$3</span>
+    <button class="buy-btn">Buy</button>
+</div>
 
-  <div class="price-list">
+<div class="price-item">
+    <span>StarterWidget</span>
+    <span>$3</span>
+    <button class="buy-btn">Buy</button>
+</div>
 
-    <div class="item">
-      <div class="name">Clarifier</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$3</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=Clarifier'">Buy</button>
-      </div>
-    </div>
+<div class="price-item">
+    <span>QuickCounter</span>
+    <span>$5</span>
+    <button class="buy-btn">Buy</button>
+</div>
 
-    <div class="item">
-      <div class="name">StarterWidget</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$3</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=StarterWidget'">Buy</button>
-      </div>
-    </div>
+<div class="price-item">
+    <span>PulseCounter</span>
+    <span>$7</span>
+    <button class="buy-btn">Buy</button>
+</div>
 
-    <div class="item">
-      <div class="name">QuickCounter</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$5</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=QuickCounter'">Buy</button>
-      </div>
-    </div>
+<div class="price-item">
+    <span>AutoFormatter</span>
+    <span>$6</span>
+    <button class="buy-btn">Buy</button>
+</div>
 
-    <div class="item">
-      <div class="name">PulseCounter</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$7</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=PulseCounter'">Buy</button>
-      </div>
-    </div>
+<div class="price-item">
+    <span>AutoWriter</span>
+    <span>$5</span>
+    <button class="buy-btn">Buy</button>
+</div>
 
-    <div class="item">
-      <div class="name">AutoFormatter</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$6</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=AutoFormatter'">Buy</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="name">AutoWriter</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$5</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=AutoWriter'">Buy</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="name">MicroNote</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$6</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=MicroNote'">Buy</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="name">TimeStampTool</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$6</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=TimeStampTool'">Buy</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="name">MicroTimer</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$7</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=MicroTimer'">Buy</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="name">MicroCopy</div>
-      <div style="display:flex;align-items:center;">
-        <div class="price">$7</div>
-        <button class="buy-btn" onclick="location.href='payment.html?tool=MicroCopy'">Buy</button>
-      </div>
-    </div>
-
-  </div>
+<div class="price-item">
+    <span>MicroNote</span>
+    <span>$6</span>
+    <button class="buy-btn">Buy</button>
+</div>
 
 </body>
 </html>
-
